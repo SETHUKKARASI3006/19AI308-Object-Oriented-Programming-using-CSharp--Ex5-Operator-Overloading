@@ -12,7 +12,7 @@ namespace OperatorOverloading
 
         public MyClass()
         {
-            this.value = 3;
+            this.value = 11;
         }
 
         public MyClass(int value)
@@ -47,7 +47,7 @@ namespace OperatorOverloading
         {
             MyClass ob1 = new MyClass(28);
             MyClass ob2 = new MyClass();
-            MyClass ob3 = new MyClass(11);
+            MyClass ob3 = new MyClass(28);
 
             Console.WriteLine("Are object1 and object2 equal? " + (ob1 == ob2));
             Console.WriteLine("Are object1 and object3 equal? " + (ob1 == ob3));

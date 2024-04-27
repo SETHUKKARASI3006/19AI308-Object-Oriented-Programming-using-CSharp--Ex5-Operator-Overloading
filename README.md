@@ -26,52 +26,57 @@ Register Number:212223230201
 ```
 using System;
 
-class MyClass
+namespace OperatorOverloading
 {
-    private int value;
-
-    public MyClass()
+    class MyClass
     {
-        this.value = 3;
+        private int value;
+
+        public MyClass()
+        {
+            this.value = 11;
+        }
+
+        public MyClass(int value)
+        {
+            this.value = value;
+        }
+
+        public int GetValue()
+        {
+            return value;
+        }
+
+        public static bool operator ==(MyClass obj1, MyClass obj2)
+        {
+
+            if (obj1 is null || obj2 is null)
+                return false;
+
+            return obj1.value == obj2.value;
+        }
+
+        public static bool operator !=(MyClass obj1, MyClass obj2)
+        {
+            return !(obj1 == obj2);
+        }
     }
 
-    public MyClass(int value)
+
+    class Program
     {
-        this.value = value;
-    }
+        static void Main(string[] args)
+        {
+            MyClass ob1 = new MyClass(28);
+            MyClass ob2 = new MyClass();
+            MyClass ob3 = new MyClass(28);
 
-    public int GetValue()
-    {
-        return value;
-    }
-
-    public static bool operator ==(MyClass obj1, MyClass obj2)
-    {
-
-        if (obj1 is null || obj2 is null)
-            return false;
-
-        return obj1.value == obj2.value;
-    }
-
-    public static bool operator !=(MyClass obj1, MyClass obj2)
-    {
-        return !(obj1 == obj2);
+            Console.WriteLine("Are object1 and object2 equal? " + (ob1 == ob2));
+            Console.WriteLine("Are object1 and object3 equal? " + (ob1 == ob3));
+        }
     }
 }
 
-class Overload
-{
-    static void Main(string[] args)
-    {
-        MyClass ob1 = new MyClass(28);
-        MyClass ob2 = new MyClass(); 
-        MyClass ob3 = new MyClass(11);
-
-        Console.WriteLine("Are object1 and object2 equal? " + (ob1 == ob2));
-        Console.WriteLine("Are object1 and object3 equal? " + (ob1 == ob3));
-    }
-}
 ```
 
 # OUTPUT:
