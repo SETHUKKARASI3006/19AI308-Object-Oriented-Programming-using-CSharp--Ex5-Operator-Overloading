@@ -23,7 +23,7 @@ Check the equality of the objects of the class.
 Developed by:SETHUKKARASI C<br>
 Register Number:212223230201
 
-'''
+```
 using System;
 
 class MyClass
@@ -72,7 +72,7 @@ class Overload
         Console.WriteLine("Are object1 and object3 equal? " + (ob1 == ob3));
     }
 }
-'''
+```
 
 # OUTPUT:
 ![output](/image.png)
